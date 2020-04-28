@@ -13,13 +13,20 @@ public class Hangman {
         ArrayList<String> guessedLetters = new ArrayList<String>();
         String selectedWord = wordPool.get(random.nextInt(wordPool.size()));
         int selectedWordLength = selectedWord.length();
-        String selectedWordHint = "";
+        String[] selectedWordSplit = selectedWord.split("");
+        String[] splitCopyHint = new String[selectedWordLength];
         int guessesLeft = 6;
         String currentGuess = "";
 
-        for (int i = 0; i < selectedWordLength; i += 1) {
-            selectedWordHint += "_ ";
+        // split word into array
+        // make copy and replace chars with _
+        for (int i = 0; i < selectedWordLength; i +=1) {
+            splitCopyHint[i] = "_ ";
         }
+        // prompt user for guess
+        // check guess is selectedWord or
+        // loop over array and check selected word chars
+            // if so, replace chars
 
         System.out.println("Welcome, let's play hangman!");
         System.out.println("Here's the word I'm thinking of: " + selectedWordHint);
